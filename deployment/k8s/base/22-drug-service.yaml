@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: drug-service
+  namespace: novagen
+  labels: { app: drug-service }
+spec:
+  replicas: 2
+  selector:
+    matchLabels: { app: drug-service }
+  template:
+    metadata:
+      labels: { app: drug-service }
+    spec:
+      containers:
+        - name: drug-service
+          image: ghcr.io/novagen/novagen-drug-service:latest
+          ports: [{ containerPort: 8002 }]
+          envFrom:
+            - configMapRef: { name: novagen-config }
+            - secretRef: { name: novagen-secrets }
+          readinessProbe:
+            httpGet: { path: /health, port: 8002 }
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet: { path: /health, port: 8002 }
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          resources:
+            requests: { cpu: "100m", memory: "256Mi" }
+            limits: { cpu: "500m", memory: "512Mi" }
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: drug-service
+  namespace: novagen
+spec:
+  selector: { app: drug-service }
+  ports: [{ port: 8002, targetPort: 8002 }]

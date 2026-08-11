@@ -1,0 +1,31 @@
+# Public entry points only. Note there is deliberately NO rule for automation-service -
+# it has no Ingress path, no NodePort, and is unreachable from outside the cluster.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: novagen-ingress
+  namespace: novagen
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/proxy-body-size: "25m"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts: ["novagen.example.com", "api.novagen.example.com"]
+      secretName: novagen-tls
+  rules:
+    - host: novagen.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service: { name: frontend, port: { number: 3000 } }
+    - host: api.novagen.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service: { name: gateway, port: { number: 8000 } }

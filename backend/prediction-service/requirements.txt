@@ -1,0 +1,25 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+sqlalchemy[asyncio]==2.0.35
+asyncpg==0.29.0
+pydantic-settings==2.5.2
+rdkit==2024.3.5
+scikit-learn==1.5.2
+numpy==2.1.1
+joblib==1.4.2
+torch==2.4.1
+
+# --- Molecular docking (see app/services/docking.py) ---
+# meeko does ligand preparation (pure Python, no C build needed) and installs
+# cleanly everywhere. Actual docking is done by calling the standalone Vina
+# executable via subprocess, NOT the fragile PyPI `vina` Python bindings
+# package (which has no pre-built wheels and requires compiling against
+# Boost — a well-documented, still-unresolved pain point on Windows).
+# Download the vina executable separately from
+# https://github.com/ccsb-scripps/AutoDock-Vina/releases and point
+# VINA_EXECUTABLE_PATH in .env at it — see deployment/native/README.md.
+meeko==0.7.1
+gemmi==0.6.5
+PyJWT==2.9.0
+passlib[bcrypt]==1.7.4
+bcrypt==4.0.1

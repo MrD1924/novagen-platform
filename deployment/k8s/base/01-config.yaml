@@ -1,0 +1,45 @@
+# Non-sensitive configuration shared by every service.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: novagen-config
+  namespace: novagen
+data:
+  ENVIRONMENT: "production"
+  LOG_LEVEL: "info"
+  POSTGRES_HOST: "postgres"
+  POSTGRES_PORT: "5432"
+  POSTGRES_DB: "novagen"
+  DATABASE_URL: "postgresql+asyncpg://novagen:$(POSTGRES_PASSWORD)@postgres:5432/novagen"
+  MONGO_URL: "mongodb://mongo:27017"
+  NEO4J_URL: "bolt://neo4j:7687"
+  REDIS_URL: "redis://redis:6379/0"
+  MINIO_ENDPOINT: "minio:9000"
+  MINIO_BUCKET: "novagen-files"
+  NEXT_PUBLIC_API_URL: "https://api.novagen.example.com"
+---
+# SECRET VALUES BELOW ARE PLACEHOLDERS. Populate via your secret manager
+# (AWS Secrets Manager / Azure Key Vault / GCP Secret Manager / Vault) and inject
+# with an External Secrets Operator in real deployments - do not commit real
+# values to this file.
+apiVersion: v1
+kind: Secret
+metadata:
+  name: novagen-secrets
+  namespace: novagen
+type: Opaque
+stringData:
+  POSTGRES_USER: "novagen"
+  POSTGRES_PASSWORD: "REPLACE_ME"
+  MONGO_INITDB_ROOT_USERNAME: "novagen"
+  MONGO_INITDB_ROOT_PASSWORD: "REPLACE_ME"
+  NEO4J_AUTH: "neo4j/REPLACE_ME"
+  MINIO_ROOT_USER: "novagen"
+  MINIO_ROOT_PASSWORD: "REPLACE_ME"
+  JWT_SECRET: "REPLACE_ME_LONG_RANDOM_STRING"
+  GOOGLE_CLIENT_ID: ""
+  GOOGLE_CLIENT_SECRET: ""
+  MICROSOFT_CLIENT_ID: ""
+  MICROSOFT_CLIENT_SECRET: ""
+  SNS_WORKBENCH_URL: ""
+  SNS_WORKBENCH_API_KEY: ""

@@ -1,0 +1,126 @@
+name: NovaGen CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAMESPACE: novagen
+
+jobs:
+  backend-lint-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        service:
+          - gateway
+          - auth-service
+          - drug-service
+          - prediction-service
+          - analytics-service
+          - experiment-service
+          - report-service
+          - notification-service
+          - workflow-service
+          - automation-service
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Install dependencies
+        run: |
+          pip install --break-system-packages -r backend/${{ matrix.service }}/requirements.txt
+          pip install --break-system-packages ruff pytest
+      - name: Lint
+        run: ruff check backend/${{ matrix.service }} backend/shared
+      - name: Test
+        run: |
+          if [ -d "backend/${{ matrix.service }}/tests" ] && [ "$(ls -A backend/${{ matrix.service }}/tests)" ]; then
+            pytest backend/${{ matrix.service }}/tests
+          else
+            echo "No tests yet for ${{ matrix.service }} - skipping."
+          fi
+
+  frontend-lint-build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "20", cache: "npm", cache-dependency-path: frontend/package-lock.json }
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build
+
+  build-and-push:
+    needs: [backend-lint-test, frontend-lint-build]
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        service:
+          - gateway
+          - auth-service
+          - drug-service
+          - prediction-service
+          - analytics-service
+          - experiment-service
+          - report-service
+          - notification-service
+          - workflow-service
+          - automation-service
+          - frontend
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build & push
+        uses: docker/build-push-action@v6
+        with:
+          context: ${{ matrix.service == 'frontend' && './frontend' || './backend' }}
+          file: ${{ matrix.service == 'frontend' && './frontend/Dockerfile' || format('./backend/{0}/Dockerfile', matrix.service) }}
+          push: true
+          tags: |
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAMESPACE }}/novagen-${{ matrix.service }}:${{ github.sha }}
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAMESPACE }}/novagen-${{ matrix.service }}:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  deploy:
+    needs: [build-and-push]
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v4
+      - name: Configure kubeconfig
+        run: echo "${{ secrets.KUBE_CONFIG }}" | base64 -d > $HOME/.kube/config
+      - name: Set image tags
+        run: |
+          cd deployment/k8s/base
+          for svc in gateway auth-service drug-service prediction-service analytics-service \
+                     experiment-service report-service notification-service workflow-service \
+                     automation-service frontend; do
+            kubectl set image deployment/$svc $svc=ghcr.io/novagen/novagen-$svc:${{ github.sha }} -n novagen --dry-run=client -o yaml \
+              | kubectl apply -f -
+          done
+      - name: Verify rollout
+        run: |
+          for svc in gateway auth-service drug-service prediction-service analytics-service \
+                     experiment-service report-service notification-service workflow-service frontend; do
+            kubectl rollout status deployment/$svc -n novagen --timeout=180s
+          done

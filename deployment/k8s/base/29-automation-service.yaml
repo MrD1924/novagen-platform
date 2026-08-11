@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: automation-service
+  namespace: novagen
+  labels: { app: automation-service }
+spec:
+  replicas: 1
+  selector:
+    matchLabels: { app: automation-service }
+  template:
+    metadata:
+      labels: { app: automation-service }
+    spec:
+      containers:
+        - name: automation-service
+          image: ghcr.io/novagen/novagen-automation-service:latest
+          ports: [{ containerPort: 8009 }]
+          envFrom:
+            - configMapRef: { name: novagen-config }
+            - secretRef: { name: novagen-secrets }
+          readinessProbe:
+            httpGet: { path: /health, port: 8009 }
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet: { path: /health, port: 8009 }
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          resources:
+            requests: { cpu: "100m", memory: "256Mi" }
+            limits: { cpu: "500m", memory: "512Mi" }
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: automation-service
+  namespace: novagen
+spec:
+  selector: { app: automation-service }
+  ports: [{ port: 8009, targetPort: 8009 }]

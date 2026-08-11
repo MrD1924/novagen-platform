@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: workflow-service
+  namespace: novagen
+  labels: { app: workflow-service }
+spec:
+  replicas: 2
+  selector:
+    matchLabels: { app: workflow-service }
+  template:
+    metadata:
+      labels: { app: workflow-service }
+    spec:
+      containers:
+        - name: workflow-service
+          image: ghcr.io/novagen/novagen-workflow-service:latest
+          ports: [{ containerPort: 8008 }]
+          envFrom:
+            - configMapRef: { name: novagen-config }
+            - secretRef: { name: novagen-secrets }
+          readinessProbe:
+            httpGet: { path: /health, port: 8008 }
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet: { path: /health, port: 8008 }
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          resources:
+            requests: { cpu: "100m", memory: "256Mi" }
+            limits: { cpu: "500m", memory: "512Mi" }
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: workflow-service
+  namespace: novagen
+spec:
+  selector: { app: workflow-service }
+  ports: [{ port: 8008, targetPort: 8008 }]

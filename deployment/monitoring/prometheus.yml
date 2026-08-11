@@ -1,0 +1,34 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+  - alerts.yml
+
+scrape_configs:
+  - job_name: novagen-services
+    metrics_path: /health
+    static_configs:
+      - targets:
+          - gateway:8000
+          - auth-service:8001
+          - drug-service:8002
+          - prediction-service:8003
+          - analytics-service:8004
+          - experiment-service:8005
+          - report-service:8006
+          - notification-service:8007
+          - workflow-service:8008
+        # automation-service is intentionally excluded from external monitoring
+        # scrape targets defined outside the cluster's internal network; it is
+        # still monitored via kubelet/cAdvisor cluster-internal metrics only.
+        labels:
+          environment: production
+
+  - job_name: postgres
+    static_configs:
+      - targets: ["postgres-exporter:9187"]
+
+  - job_name: redis
+    static_configs:
+      - targets: ["redis-exporter:9121"]
