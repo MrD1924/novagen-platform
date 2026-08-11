@@ -1,0 +1,15 @@
+INFO:     127.0.0.1:57723 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55207 - "GET /notifications?unread_only=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55218 - "GET /notifications?unread_only=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63400 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55296 - "POST /notifications HTTP/1.1" 201 Created
+INFO:     127.0.0.1:52178 - "GET /notifications?unread_only=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52178 - "GET /notifications?unread_only=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49458 - "GET /notifications?unread_only=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49485 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49500 - "GET /notifications?unread_only=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49500 - "GET /notifications?unread_only=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49500 - "POST /notifications/86774498-8263-4488-996b-3078e4e2c02b/read HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49500 - "GET /notifications?unread_only=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55937 - "GET /notifications?unread_only=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55954 - "GET /notifications?unread_only=false HTTP/1.1" 200 OK

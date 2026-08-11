@@ -1,0 +1,172 @@
+{"timestamp": "2026-08-11T04:07:41", "level": "INFO", "service": "gateway", "message": "GET /health -> 200 (1.0ms) [4eb349be-b78a-417b-bf3f-e6c438aafa7f]"}
+INFO:     127.0.0.1:57711 - "GET /health HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:10:03", "level": "INFO", "service": "gateway", "message": "POST /api/v1/auth/login -> 200 (1283.82ms) [0d4eba1a-5f93-4426-8c9b-760379bf6c21]"}
+INFO:     127.0.0.1:59538 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:10:13", "level": "INFO", "service": "gateway", "message": "POST /api/v1/workflow/pipeline/start -> 201 (10189.97ms) [2768679d-5836-4fca-a376-324da8a6f050]"}
+INFO:     127.0.0.1:59538 - "POST /api/v1/workflow/pipeline/start HTTP/1.1" 201 Created
+{"timestamp": "2026-08-11T04:12:16", "level": "INFO", "service": "gateway", "message": "OPTIONS /api/v1/auth/login -> 200 (1.01ms) [0d95af9f-08ac-4f43-a3de-7a55ee472a40]"}
+INFO:     127.0.0.1:54430 - "OPTIONS /api/v1/auth/login HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:12:16", "level": "INFO", "service": "gateway", "message": "POST /api/v1/auth/login -> 422 (493.37ms) [0671e69b-aa25-40e9-b879-1eef2f296cb2]"}
+INFO:     127.0.0.1:54430 - "POST /api/v1/auth/login HTTP/1.1" 422 Unprocessable Entity
+{"timestamp": "2026-08-11T04:12:22", "level": "INFO", "service": "gateway", "message": "POST /api/v1/auth/login -> 200 (579.91ms) [008c1fca-b68e-45c1-abbe-58d57d946515]"}
+INFO:     127.0.0.1:54430 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:12:22", "level": "INFO", "service": "gateway", "message": "OPTIONS /api/v1/auth/me -> 200 (0.0ms) [ac0b3aac-441d-4ebe-9d3c-e3e9a2b08950]"}
+INFO:     127.0.0.1:54430 - "OPTIONS /api/v1/auth/me HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:12:22", "level": "INFO", "service": "gateway", "message": "GET /api/v1/auth/me -> 200 (41.02ms) [35f40cd9-66f4-4f9e-8dd7-54062be6a39c]"}
+INFO:     127.0.0.1:54430 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:12:34", "level": "INFO", "service": "gateway", "message": "OPTIONS /api/v1/notification/notifications -> 200 (1.0ms) [2ca2c238-f2fe-4a74-ba5e-ea65722cec09]"}
+INFO:     127.0.0.1:55195 - "OPTIONS /api/v1/notification/notifications?unread_only=false HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:12:34", "level": "INFO", "service": "gateway", "message": "OPTIONS /api/v1/experiment/experiments -> 200 (1.0ms) [a388f6af-685d-49c7-acba-167df14b1ab4]"}
+INFO:     127.0.0.1:55197 - "OPTIONS /api/v1/experiment/experiments HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:12:34", "level": "INFO", "service": "gateway", "message": "OPTIONS /api/v1/analytics/dashboard/summary -> 200 (5.16ms) [a4218b66-12c3-459b-b0ef-19a99c588fb3]"}
+INFO:     127.0.0.1:55198 - "OPTIONS /api/v1/analytics/dashboard/summary HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:12:34", "level": "INFO", "service": "gateway", "message": "OPTIONS /api/v1/analytics/dashboard/pipeline-progress -> 200 (7.72ms) [a9fc2967-5d39-445c-b7d4-d8c3ecec0ad8]"}
+INFO:     127.0.0.1:55195 - "OPTIONS /api/v1/analytics/dashboard/pipeline-progress HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:12:34", "level": "INFO", "service": "gateway", "message": "GET /api/v1/auth/me -> 200 (269.56ms) [98228eed-348f-47ff-af45-6526cdc4229d]"}
+INFO:     127.0.0.1:55194 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:12:35", "level": "INFO", "service": "gateway", "message": "GET /api/v1/experiment/experiments -> 200 (604.37ms) [d931c1cf-ca11-4515-9e30-fe7292bb12f0]"}
+INFO:     127.0.0.1:55197 - "GET /api/v1/experiment/experiments HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:12:35", "level": "INFO", "service": "gateway", "message": "GET /api/v1/analytics/dashboard/summary -> 200 (786.26ms) [8d31d8de-aca7-4dc1-ac84-edcc5306a95e]"}
+INFO:     127.0.0.1:55198 - "GET /api/v1/analytics/dashboard/summary HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:12:35", "level": "INFO", "service": "gateway", "message": "GET /api/v1/notification/notifications -> 200 (862.94ms) [47d4831a-52ef-423c-aa1f-5db6927f0194]"}
+INFO:     127.0.0.1:55199 - "GET /api/v1/notification/notifications?unread_only=false HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:12:35", "level": "INFO", "service": "gateway", "message": "GET /api/v1/analytics/dashboard/pipeline-progress -> 200 (873.73ms) [6a0b18f3-d6cd-40f4-b497-4594372971b4]"}
+INFO:     127.0.0.1:55195 - "GET /api/v1/analytics/dashboard/pipeline-progress HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:12:50", "level": "INFO", "service": "gateway", "message": "GET /api/v1/notification/notifications -> 200 (300.81ms) [04054eeb-0255-4eb1-a4d0-77474a82ab6d]"}
+INFO:     127.0.0.1:55216 - "GET /api/v1/notification/notifications?unread_only=false HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:19:13", "level": "INFO", "service": "gateway", "message": "POST /api/v1/auth/login -> 200 (793.95ms) [3481fe80-fe6f-4da4-aae4-ebbafff3cfd6]"}
+INFO:     127.0.0.1:63382 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:19:15", "level": "INFO", "service": "gateway", "message": "POST /api/v1/workflow/pipeline/start -> 201 (1476.6ms) [931e2115-63be-4a0b-ae4d-27747ac4c426]"}
+INFO:     127.0.0.1:63382 - "POST /api/v1/workflow/pipeline/start HTTP/1.1" 201 Created
+{"timestamp": "2026-08-11T04:24:57", "level": "INFO", "service": "gateway", "message": "POST /api/v1/auth/login -> 200 (828.51ms) [981c477c-32cd-4687-ab47-e41812caa934]"}
+INFO:     127.0.0.1:59209 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:25:02", "level": "INFO", "service": "gateway", "message": "POST /api/v1/workflow/pipeline/start -> 201 (1286.06ms) [907596b9-ff5d-4761-97cd-e60ac157065d]"}
+INFO:     127.0.0.1:59209 - "POST /api/v1/workflow/pipeline/start HTTP/1.1" 201 Created
+{"timestamp": "2026-08-11T04:27:28", "level": "INFO", "service": "gateway", "message": "POST /api/v1/auth/login -> 200 (852.07ms) [2563f0a2-aaa0-4524-a1ac-7bab028ee161]"}
+INFO:     127.0.0.1:55286 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:27:30", "level": "INFO", "service": "gateway", "message": "POST /api/v1/workflow/pipeline/start -> 201 (1405.73ms) [d1f9c942-ba15-47d3-8412-4ccfdc8ee4b6]"}
+INFO:     127.0.0.1:55286 - "POST /api/v1/workflow/pipeline/start HTTP/1.1" 201 Created
+{"timestamp": "2026-08-11T04:29:04", "level": "INFO", "service": "gateway", "message": "OPTIONS /api/v1/auth/login -> 200 (4.7ms) [307e62f8-91e0-4171-94e5-ec54402b66d3]"}
+INFO:     127.0.0.1:52157 - "OPTIONS /api/v1/auth/login HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:29:04", "level": "INFO", "service": "gateway", "message": "POST /api/v1/auth/login -> 422 (366.06ms) [b51772c8-9811-4c8c-9389-5cdb4fbe42d9]"}
+INFO:     127.0.0.1:52157 - "POST /api/v1/auth/login HTTP/1.1" 422 Unprocessable Entity
+{"timestamp": "2026-08-11T04:29:08", "level": "INFO", "service": "gateway", "message": "POST /api/v1/auth/login -> 200 (508.76ms) [f828c52f-22b9-40eb-b82f-b53fcfba1c79]"}
+INFO:     127.0.0.1:52157 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:29:08", "level": "INFO", "service": "gateway", "message": "OPTIONS /api/v1/auth/me -> 200 (1.12ms) [d63fb81f-3c0e-4f60-9deb-d42eb648c782]"}
+INFO:     127.0.0.1:52157 - "OPTIONS /api/v1/auth/me HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:29:08", "level": "INFO", "service": "gateway", "message": "GET /api/v1/auth/me -> 200 (35.24ms) [9de91eaa-c914-4c34-a16c-8df16c2c1095]"}
+INFO:     127.0.0.1:52157 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:29:13", "level": "INFO", "service": "gateway", "message": "POST /api/v1/auth/login -> 200 (496.91ms) [752c96ac-73a7-4cab-916b-753d68f0deca]"}
+INFO:     127.0.0.1:52157 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:29:13", "level": "INFO", "service": "gateway", "message": "GET /api/v1/auth/me -> 200 (14.74ms) [ced49e1c-4a48-429a-a342-a4650ffccf4f]"}
+INFO:     127.0.0.1:52157 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:29:15", "level": "INFO", "service": "gateway", "message": "POST /api/v1/auth/login -> 200 (506.5ms) [700ac94f-cd81-4445-ba45-65f03eee3030]"}
+INFO:     127.0.0.1:52157 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:29:15", "level": "INFO", "service": "gateway", "message": "GET /api/v1/auth/me -> 200 (13.54ms) [d5ec806a-3a1d-4d47-ab03-81cf4465c910]"}
+INFO:     127.0.0.1:52157 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:29:16", "level": "INFO", "service": "gateway", "message": "OPTIONS /api/v1/notification/notifications -> 200 (2.0ms) [07e3e901-b282-4f07-a1fd-dd2f6dd448b3]"}
+INFO:     127.0.0.1:52168 - "OPTIONS /api/v1/notification/notifications?unread_only=false HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:29:16", "level": "INFO", "service": "gateway", "message": "OPTIONS /api/v1/experiment/experiments -> 200 (2.0ms) [bb59c5e7-7176-467b-ab24-d216a0c4dfa1]"}
+INFO:     127.0.0.1:52170 - "OPTIONS /api/v1/experiment/experiments HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:29:16", "level": "INFO", "service": "gateway", "message": "OPTIONS /api/v1/analytics/dashboard/summary -> 200 (8.09ms) [63b19d26-ce09-44a4-aee0-51650effb240]"}
+INFO:     127.0.0.1:52171 - "OPTIONS /api/v1/analytics/dashboard/summary HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:29:16", "level": "INFO", "service": "gateway", "message": "OPTIONS /api/v1/analytics/dashboard/pipeline-progress -> 200 (8.65ms) [63d09df6-fa64-41f3-9f8e-d55427b6f6dc]"}
+INFO:     127.0.0.1:52172 - "OPTIONS /api/v1/analytics/dashboard/pipeline-progress HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:29:17", "level": "INFO", "service": "gateway", "message": "GET /api/v1/notification/notifications -> 200 (410.53ms) [3cd5a4db-9421-451c-9995-a1ad720a4827]"}
+INFO:     127.0.0.1:52168 - "GET /api/v1/notification/notifications?unread_only=false HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:29:17", "level": "INFO", "service": "gateway", "message": "POST /api/v1/auth/login -> 200 (725.95ms) [9a602b63-5aeb-482d-b586-e09e74f03a36]"}
+INFO:     127.0.0.1:52157 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:29:17", "level": "INFO", "service": "gateway", "message": "GET /api/v1/auth/me -> 200 (25.25ms) [817dc7cb-ad86-4bc6-b844-ae905f4884ce]"}
+INFO:     127.0.0.1:52157 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:29:17", "level": "INFO", "service": "gateway", "message": "GET /api/v1/analytics/dashboard/pipeline-progress -> 200 (698.04ms) [1bb697e1-b68e-4d70-9388-0bb9b40d8854]"}
+INFO:     127.0.0.1:52172 - "GET /api/v1/analytics/dashboard/pipeline-progress HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:29:17", "level": "INFO", "service": "gateway", "message": "GET /api/v1/analytics/dashboard/summary -> 200 (704.1ms) [77d1f56b-9152-4323-822e-4d68d36b4b4a]"}
+INFO:     127.0.0.1:52171 - "GET /api/v1/analytics/dashboard/summary HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:29:17", "level": "INFO", "service": "gateway", "message": "GET /api/v1/experiment/experiments -> 200 (756.66ms) [24f20cdd-5ef9-4d3e-8c63-2d60e7907066]"}
+INFO:     127.0.0.1:52170 - "GET /api/v1/experiment/experiments HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:29:17", "level": "INFO", "service": "gateway", "message": "GET /api/v1/auth/me -> 200 (961.94ms) [4923d2b1-eef2-4611-8132-71c0c552383b]"}
+INFO:     127.0.0.1:52167 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:29:21", "level": "INFO", "service": "gateway", "message": "GET /api/v1/notification/notifications -> 200 (29.57ms) [29eddfd5-9e08-48e5-a2c5-73fda0f12eb5]"}
+INFO:     127.0.0.1:52157 - "GET /api/v1/notification/notifications?unread_only=false HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:30:42", "level": "INFO", "service": "gateway", "message": "GET /api/v1/notification/notifications -> 200 (300.78ms) [f0d7ecb3-db98-4412-883e-6eccfe275665]"}
+INFO:     127.0.0.1:49455 - "GET /api/v1/notification/notifications?unread_only=false HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:30:42", "level": "INFO", "service": "gateway", "message": "GET /api/v1/auth/me -> 200 (313.77ms) [353c8468-c632-44e0-bbde-ec24c26526d1]"}
+INFO:     127.0.0.1:49454 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:31:26", "level": "INFO", "service": "gateway", "message": "POST /api/v1/auth/login -> 200 (757.85ms) [c25613ff-0dd5-42e6-b266-75858d3fad46]"}
+INFO:     127.0.0.1:49467 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:31:26", "level": "INFO", "service": "gateway", "message": "GET /api/v1/auth/me -> 200 (15.23ms) [72fa7151-379e-4b8c-84f9-c20543de488a]"}
+INFO:     127.0.0.1:49467 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:31:30", "level": "INFO", "service": "gateway", "message": "POST /api/v1/auth/login -> 200 (565.91ms) [d6a27cf3-e5ca-4dad-836d-0f9b7b85fa89]"}
+INFO:     127.0.0.1:49467 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:31:30", "level": "INFO", "service": "gateway", "message": "GET /api/v1/auth/me -> 200 (13.44ms) [5f6a7e87-7aff-47ed-8d8f-62e0bdab862d]"}
+INFO:     127.0.0.1:49467 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:31:30", "level": "INFO", "service": "gateway", "message": "GET /api/v1/auth/me -> 200 (275.55ms) [9aad654c-11ce-43df-99ec-7612e9122e2c]"}
+INFO:     127.0.0.1:49472 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:31:30", "level": "INFO", "service": "gateway", "message": "OPTIONS /api/v1/auth/admin/users -> 200 (0.99ms) [f010d903-7461-4bda-b072-e949ddc7384a]"}
+INFO:     127.0.0.1:49472 - "OPTIONS /api/v1/auth/admin/users HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:31:30", "level": "INFO", "service": "gateway", "message": "OPTIONS /api/v1/auth/admin/audit-logs -> 200 (2.03ms) [d20bf12e-7f6b-4006-ae5c-a664c896c3e2]"}
+INFO:     127.0.0.1:49467 - "OPTIONS /api/v1/auth/admin/audit-logs HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:31:30", "level": "INFO", "service": "gateway", "message": "GET /api/v1/auth/admin/users -> 200 (81.27ms) [7bba125a-8da9-461c-91cb-b407a288ce81]"}
+INFO:     127.0.0.1:49472 - "GET /api/v1/auth/admin/users HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:31:30", "level": "INFO", "service": "gateway", "message": "GET /api/v1/auth/admin/audit-logs -> 200 (77.31ms) [0dd36184-9b74-4313-bb2c-3eec953a576f]"}
+INFO:     127.0.0.1:49467 - "GET /api/v1/auth/admin/audit-logs HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:31:43", "level": "INFO", "service": "gateway", "message": "GET /health -> 200 (22.68ms) [cdbab418-6c49-4c7b-9116-69e377c8dce1]"}
+INFO:     127.0.0.1:49478 - "GET /health HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:31:52", "level": "INFO", "service": "gateway", "message": "GET /api/v1/notification/notifications -> 200 (369.06ms) [f61a8f81-d630-4461-9da6-145e4afcbd2d]"}
+INFO:     127.0.0.1:49490 - "GET /api/v1/notification/notifications?unread_only=false HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:31:52", "level": "INFO", "service": "gateway", "message": "GET /api/v1/experiment/experiments -> 200 (362.64ms) [1a0e4fef-9d07-4635-9e42-0ef82a48c40b]"}
+INFO:     127.0.0.1:49491 - "GET /api/v1/experiment/experiments HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:31:52", "level": "INFO", "service": "gateway", "message": "GET /api/v1/analytics/dashboard/pipeline-progress -> 200 (359.44ms) [4a061a6e-7f30-4e79-8a9d-2327dbdc2cff]"}
+INFO:     127.0.0.1:49493 - "GET /api/v1/analytics/dashboard/pipeline-progress HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:31:52", "level": "INFO", "service": "gateway", "message": "GET /api/v1/analytics/dashboard/summary -> 200 (370.99ms) [18696c07-de50-4fc2-b40e-0182aa6d035a]"}
+INFO:     127.0.0.1:49492 - "GET /api/v1/analytics/dashboard/summary HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:31:54", "level": "INFO", "service": "gateway", "message": "GET /api/v1/notification/notifications -> 200 (20.82ms) [309657b9-8b30-4c95-a207-da6085ac0dc3]"}
+INFO:     127.0.0.1:49490 - "GET /api/v1/notification/notifications?unread_only=false HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:31:58", "level": "INFO", "service": "gateway", "message": "OPTIONS /api/v1/notification/notifications/86774498-8263-4488-996b-3078e4e2c02b/read -> 200 (0.0ms) [48912878-c4cc-4293-bfa9-d9525d356f5c]"}
+INFO:     127.0.0.1:49490 - "OPTIONS /api/v1/notification/notifications/86774498-8263-4488-996b-3078e4e2c02b/read HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:31:58", "level": "INFO", "service": "gateway", "message": "POST /api/v1/notification/notifications/86774498-8263-4488-996b-3078e4e2c02b/read -> 200 (67.37ms) [cde4c95a-1753-46aa-bbc8-e4b12c7e6bfa]"}
+INFO:     127.0.0.1:49490 - "POST /api/v1/notification/notifications/86774498-8263-4488-996b-3078e4e2c02b/read HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:31:58", "level": "INFO", "service": "gateway", "message": "GET /api/v1/notification/notifications -> 200 (14.53ms) [48449998-bd31-4bdb-9e57-eddd7e3dd902]"}
+INFO:     127.0.0.1:49490 - "GET /api/v1/notification/notifications?unread_only=false HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:45:38", "level": "INFO", "service": "gateway", "message": "OPTIONS /api/v1/auth/login -> 200 (11.48ms) [54ba17ff-a17c-4c40-ad1e-647e951737e6]"}
+INFO:     127.0.0.1:64110 - "OPTIONS /api/v1/auth/login HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:45:40", "level": "INFO", "service": "gateway", "message": "POST /api/v1/auth/login -> 200 (1138.4ms) [df87df52-5793-48a7-bca8-e10789e8afc5]"}
+INFO:     127.0.0.1:64110 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:45:40", "level": "INFO", "service": "gateway", "message": "OPTIONS /api/v1/auth/me -> 200 (0.0ms) [de085590-a033-488e-825d-37011667e362]"}
+INFO:     127.0.0.1:64110 - "OPTIONS /api/v1/auth/me HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:45:40", "level": "INFO", "service": "gateway", "message": "GET /api/v1/auth/me -> 200 (40.72ms) [85188c71-ff48-4e57-8506-ec7f160dfce7]"}
+INFO:     127.0.0.1:64110 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:45:42", "level": "INFO", "service": "gateway", "message": "GET /api/v1/auth/me -> 200 (13.66ms) [faa96dd6-8e80-4de1-ba92-a2a700d70193]"}
+INFO:     127.0.0.1:64110 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:45:42", "level": "INFO", "service": "gateway", "message": "OPTIONS /api/v1/auth/admin/users -> 200 (0.0ms) [cd8fbe29-ee7f-4ce1-b7b1-2c9039366f6c]"}
+INFO:     127.0.0.1:64110 - "OPTIONS /api/v1/auth/admin/users HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:45:42", "level": "INFO", "service": "gateway", "message": "OPTIONS /api/v1/auth/admin/audit-logs -> 200 (2.0ms) [f5be853c-fb42-4369-9248-1d2359e5047a]"}
+INFO:     127.0.0.1:64115 - "OPTIONS /api/v1/auth/admin/audit-logs HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:45:42", "level": "INFO", "service": "gateway", "message": "GET /api/v1/auth/admin/users -> 200 (24.27ms) [c760f2e3-d38c-46ea-9377-abbecaeab33b]"}
+INFO:     127.0.0.1:64110 - "GET /api/v1/auth/admin/users HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:45:42", "level": "INFO", "service": "gateway", "message": "GET /api/v1/auth/admin/audit-logs -> 200 (289.21ms) [f16680a2-a2e1-4619-a612-57ef0d0e1713]"}
+INFO:     127.0.0.1:64115 - "GET /api/v1/auth/admin/audit-logs HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:46:06", "level": "INFO", "service": "gateway", "message": "OPTIONS /api/v1/notification/notifications -> 200 (1.0ms) [028685df-c0e4-42c8-852d-5222ccc0f65d]"}
+INFO:     127.0.0.1:55929 - "OPTIONS /api/v1/notification/notifications?unread_only=false HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:46:06", "level": "INFO", "service": "gateway", "message": "OPTIONS /api/v1/analytics/dashboard/pipeline-progress -> 200 (7.0ms) [5af4936b-dba8-416a-b396-729fa8b66772]"}
+INFO:     127.0.0.1:55929 - "OPTIONS /api/v1/analytics/dashboard/pipeline-progress HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:46:06", "level": "INFO", "service": "gateway", "message": "OPTIONS /api/v1/experiment/experiments -> 200 (9.15ms) [0877ba59-38fb-403b-ac58-d8058966f9d4]"}
+INFO:     127.0.0.1:55930 - "OPTIONS /api/v1/experiment/experiments HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:46:06", "level": "INFO", "service": "gateway", "message": "OPTIONS /api/v1/analytics/dashboard/summary -> 200 (4.89ms) [d6c89f86-fa69-4718-8aba-b682d3497c1a]"}
+INFO:     127.0.0.1:55932 - "OPTIONS /api/v1/analytics/dashboard/summary HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:46:07", "level": "INFO", "service": "gateway", "message": "GET /api/v1/experiment/experiments -> 200 (682.75ms) [fc95c434-2023-4ade-8d36-db1eb1a3ed75]"}
+INFO:     127.0.0.1:55930 - "GET /api/v1/experiment/experiments HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:46:07", "level": "INFO", "service": "gateway", "message": "GET /api/v1/notification/notifications -> 200 (852.77ms) [f4337803-6a45-4f80-823a-463e441e7dd1]"}
+INFO:     127.0.0.1:55931 - "GET /api/v1/notification/notifications?unread_only=false HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:46:07", "level": "INFO", "service": "gateway", "message": "GET /api/v1/analytics/dashboard/pipeline-progress -> 200 (891.42ms) [b8b71b92-bdda-4245-a2aa-59545cb8ff29]"}
+INFO:     127.0.0.1:55929 - "GET /api/v1/analytics/dashboard/pipeline-progress HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:46:07", "level": "INFO", "service": "gateway", "message": "GET /api/v1/analytics/dashboard/summary -> 200 (898.02ms) [aa02ade4-cf38-452b-91c2-43a200a2612c]"}
+INFO:     127.0.0.1:55932 - "GET /api/v1/analytics/dashboard/summary HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:46:18", "level": "INFO", "service": "gateway", "message": "OPTIONS /api/v1/drug/proteins -> 200 (0.0ms) [6ef9623b-6f5a-4a01-85f5-03edfc93df69]"}
+INFO:     127.0.0.1:55948 - "OPTIONS /api/v1/drug/proteins HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:46:18", "level": "INFO", "service": "gateway", "message": "GET /api/v1/auth/me -> 200 (285.65ms) [8d5cf829-2e1b-4d1e-8262-6387b1057eec]"}
+INFO:     127.0.0.1:55947 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:46:19", "level": "INFO", "service": "gateway", "message": "GET /api/v1/drug/proteins -> 200 (607.45ms) [b94263ff-3170-4d24-9a97-7843099cfd9e]"}
+INFO:     127.0.0.1:55948 - "GET /api/v1/drug/proteins HTTP/1.1" 200 OK
+{"timestamp": "2026-08-11T04:46:23", "level": "INFO", "service": "gateway", "message": "GET /api/v1/notification/notifications -> 200 (288.55ms) [69b6408e-f40c-4ebf-a3e5-10807c24f4d2]"}
+INFO:     127.0.0.1:55948 - "GET /api/v1/notification/notifications?unread_only=false HTTP/1.1" 200 OK
